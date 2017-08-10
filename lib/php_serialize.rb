@@ -61,7 +61,11 @@ module PHP
 				s << '}'
 
 			when String, Symbol
-				s << "s:#{var.to_s.bytesize}:\"#{var.to_s}\";"
+				if s.to_i !== 0 || s === '0'
+					s << "i:#{var.to_i};"
+				else
+					s << "s:#{var.to_s.bytesize}:\"#{var.to_s}\";"
+				end
 
 			when Fixnum # PHP doesn't have bignums
 				s << "i:#{var};"
