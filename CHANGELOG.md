@@ -1,3 +1,6 @@
+## 1.2.4 2017-08-10
+- If a integer as string is used as key "3" the serializer assumes integer 3
+
 ## 1.2.0 2017-06-29
 - Special require option no longer needed for Bundler
 - Warnings fixes on JRuby
