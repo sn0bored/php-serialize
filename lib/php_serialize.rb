@@ -61,7 +61,8 @@ module PHP
 				s << '}'
 
 			when String, Symbol
-				if s.to_i != 0 || s == '0'
+				var = var.class == Symbol ? var.to_s : var
+				if var.to_i != 0 || var == '0'
 					s << "i:#{var.to_i};"
 				else
 					s << "s:#{var.to_s.bytesize}:\"#{var.to_s}\";"
